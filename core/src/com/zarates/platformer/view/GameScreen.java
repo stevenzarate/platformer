@@ -1,5 +1,6 @@
 package com.zarates.platformer.view;
 //these are the imports
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.maps.tiled.TiledMap;
@@ -14,7 +15,11 @@ public class GameScreen implements Screen {
     public GameScreen() {
         map = new TmxMapLoader().load("map/map1.tmx");
         renderer = new OrthogonalTiledMapRenderer(map, 1/70f);//this is for the tile
-        camera = new OrthographicCamera(14f, 14f);//this is for how many tiles display on screen
+        //gets the height and width of screen
+        float width = Gdx.graphics.getWidth();
+        float height = Gdx.graphics.getHeight();
+
+        camera = new OrthographicCamera(14f, 14f * (height/width));//this is for how many tiles display on screen and does something with the aspect
         camera.position.set(camera.viewportWidth/ 2f, camera.viewportHeight/ 2f,0);//it changes the points on the graph so the camera view can change
     }
 
