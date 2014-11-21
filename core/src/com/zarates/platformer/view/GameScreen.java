@@ -2,6 +2,7 @@ package com.zarates.platformer.view;
 //these are the imports
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
@@ -25,6 +26,8 @@ public class GameScreen implements Screen {
 
     @Override
     public void render(float delta) {
+        Gdx.gl.glClearColor(0.12f, 0.48f, 0.87f, 1f);//that's my color
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);//clears screen of black
         camera.update();// it updates the camera
         renderer.setView(camera);//sets the camera on the map
         renderer.render();//to draw our map on the screen
@@ -32,7 +35,9 @@ public class GameScreen implements Screen {
 
     @Override
     public void resize(int width, int height) {
-
+        camera.viewportWidth = 14f;//new height and width of window
+        camera.viewportHeight = 14f * height / width;//new window size
+        camera.update();//updates the camera
     }
 
     @Override
