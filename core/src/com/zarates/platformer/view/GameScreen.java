@@ -27,7 +27,7 @@ public class GameScreen implements Screen {
     @Override
     public void render(float delta) {
         Gdx.gl.glClearColor(0.12f, 0.48f, 0.87f, 1f);//that's my color
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);//clears screen of black
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);//clears screen with my chosen color
         camera.update();// it updates the camera
         renderer.setView(camera);//sets the camera on the map
         renderer.render();//to draw our map on the screen
