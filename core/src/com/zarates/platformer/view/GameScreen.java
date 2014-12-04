@@ -4,14 +4,20 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.zarates.platformer.model.Player;
+
 //these are variables
 public class GameScreen implements Screen {
     public TiledMap map;
     public OrthogonalTiledMapRenderer renderer;
     public OrthographicCamera camera;
+
+    public SpriteBatch spriteBatch;
+    public Player player;
 
     public GameScreen() {
         map = new TmxMapLoader().load("map/map1.tmx");
@@ -22,6 +28,9 @@ public class GameScreen implements Screen {
 
         camera = new OrthographicCamera(14f, 14f * (height/width));//this is for how many tiles display on screen and does something with the aspect
         camera.position.set(camera.viewportWidth/ 2f, camera.viewportHeight/ 2f,0);//it changes the points on the graph so the camera view can change
+
+        spriteBatch = new SpriteBatch();
+        player = new Player();//the player variable stores postition and spritesheet
     }
 
     @Override
@@ -31,6 +40,10 @@ public class GameScreen implements Screen {
         camera.update();// it updates the camera
         renderer.setView(camera);//sets the camera on the map
         renderer.render();//to draw our map on the screen
+
+        spriteBatch.begin();//to know when to begin to draw the player
+        player.draw(spriteBatch);
+        spriteBatch.end();//to know when to end the draw
     }
 
     @Override
