@@ -32,7 +32,7 @@ public class Spritesheet {
     }
 
     public Animation createAnimation(int startFrame, int lastFrame, float animationSpeed){
-        int counter = (lastFrame + 1) - startFrame;
+        int counter = (lastFrame + 1) - startFrame;//open spaces
         TextureRegion[] animationFrames = new TextureRegion[counter];//storing frames in our new animation array
 
         for (int index = lastFrame; index >= startFrame; index--){//working backwards from 10 to 0
@@ -43,6 +43,14 @@ public class Spritesheet {
     }
 
     public Animation flipAnimation(Animation originalAnimation, boolean flipX, boolean flipY){
+        int frameCount = originalAnimation.getKeyFrames().length;
+        TextureRegion[] flippedFrames = new TextureRegion[frameCount];
 
+        for (int index = 0; index <= frameCount - 1; index++){
+            flippedFrames[index] = new TextureRegion(originalAnimation.getKeyFrames()[index]);//access open spaces
+            flippedFrames[index].flip(flipX, flipY);//flip animation
+        }
+        
+        return new Animation(originalAnimation.getFrameDuration(),flippedFrames);
     }
 }

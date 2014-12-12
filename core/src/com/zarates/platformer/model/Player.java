@@ -15,6 +15,7 @@ public class Player {
         position = new Vector2(4, 5);//the points where the player shows up
         spriteSheet = new Spritesheet("img/aliens.png", 70, 100);
         animation = spriteSheet.createAnimation(9, 20, .1f);//using spritesheet object
+        animation = spriteSheet.flipAnimation(animation, true, false);
 
         stateTime = 0f;
 
