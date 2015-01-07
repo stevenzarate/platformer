@@ -9,6 +9,9 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
+import com.badlogic.gdx.physics.box2d.World;
 import com.zarates.platformer.model.Player;
 
 //these are variables
@@ -20,9 +23,14 @@ public class GameScreen implements Screen {
     public Batch spriteBatch;
     public Player player;
 
+    public static World gameWorld;
+    private Box2DDebugRenderer debugRenderer;
+
     public GameScreen() {
         map = new TmxMapLoader().load("map/map1.tmx");
         renderer = new OrthogonalTiledMapRenderer(map, 1/70f);//this is for the tile
+        gameWorld = new World(new Vector2(0, -10), true);//creates gravity
+        debugRenderer = new Box2DDebugRenderer();
         //gets the height and width of screen
         float width = Gdx.graphics.getWidth();
         float height = Gdx.graphics.getHeight();
@@ -47,6 +55,8 @@ public class GameScreen implements Screen {
         spriteBatch.begin();//to know when to begin to draw the player
         player.draw(spriteBatch);
         spriteBatch.end();//to know when to end the draw
+
+        debugRenderer.render(gameWorld, camera.combined);//displaying shapes at the side its supposed to be
     }
 
     @Override

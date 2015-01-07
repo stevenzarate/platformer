@@ -50,7 +50,7 @@ public class Spritesheet {
             flippedFrames[index] = new TextureRegion(originalAnimation.getKeyFrames()[index]);//access open spaces
             flippedFrames[index].flip(flipX, flipY);//flip animation
         }
-        
+
         return new Animation(originalAnimation.getFrameDuration(),flippedFrames);
     }
 }
