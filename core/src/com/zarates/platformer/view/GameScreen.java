@@ -3,28 +3,17 @@ package com.zarates.platformer.view;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.Batch;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.maps.tiled.TiledMap;
-import com.badlogic.gdx.maps.tiled.TmxMapLoader;
-import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
-import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
-import com.badlogic.gdx.physics.box2d.World;
 import com.zarates.platformer.controller.CameraController;
 import com.zarates.platformer.controller.LevelController;
-import com.zarates.platformer.model.Player;
+import com.zarates.platformer.controller.PlayerController;
 
 //these are variables
 public class GameScreen implements Screen {
 
-    public Player player;
-
     public GameScreen() {
         LevelController.initializeController();
         CameraController.initializeController();
-        player = new Player(70, 100);//the player variable stores postition and spritesheet
+        PlayerController.initializeController();
     }
 
     @Override
@@ -35,7 +24,6 @@ public class GameScreen implements Screen {
         LevelController.update(delta);
         CameraController.update();
 
-        player.update(delta);
         LevelController.draw();
     }
 
