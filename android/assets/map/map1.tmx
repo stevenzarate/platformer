@@ -8,22 +8,39 @@
    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA3AAAAAAAAAEgAAABGAAAARgAAAEYAAABGAAAAPgAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEYAAABGAAAAAAAAAF0AAAAAAAAAAAAAAAAAAAA+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXwAAAAAAAAAAAAAAAAAAAD4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABIAAAAZgAAAAAAAABfAAAAAAAAAEEAAABNAAAATQAAAEoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASAAAAEkAAABTAAAAUwAAAFMAAABTAAAAUwAAAD4AAAA+AAAASwAAAEoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEgAAABJAAAAPgAAAFEAAABRAAAAUQAAAFEAAABRAAAAPgAAAD4AAAA+AAAASwAAAEoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABIAAAASQAAAD4AAAA+AAAAUQAAAFEAAABRAAAAUQAAAFEAAAA+AAAAPgAAAD4AAAA+AAAASwAAAEoAAAAAAAAAAAAAAE0AAABNAAAATQAAAGEAAABhAAAAYQAAAGEAAABRAAAAUQAAAFEAAABRAAAAUQAAAD4AAAA+AAAAPgAAAD4AAAA+AAAAPgAAAE0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
   </data>
  </layer>
- <objectgroup color="#0000ff" name="collision" width="20" height="10">
-  <object name="ground" type="solid" x="420" y="140" width="140" height="70"/>
-  <object name="ground" type="solid" x="630" y="70" width="350" height="70"/>
-  <object x="560" y="280" height="70"/>
-  <object name="ground" type="solid" x="490" y="280" width="70" height="70"/>
-  <object name="ground" type="solid" x="770" y="280" width="210" height="70"/>
-  <object name="ground" type="solid" x="1050" y="350" width="70" height="140"/>
-  <object name="ground" type="solid" x="1120" y="420" width="70" height="140"/>
-  <object name="ground" type="solid" x="1190" y="490" width="70" height="140"/>
-  <object name="ground" type="solid" x="1260" y="560" width="70" height="70"/>
-  <object x="490" y="280" height="140"/>
-  <object name="ground" type="solid" x="420" y="280" width="70" height="140"/>
-  <object name="ground" type="solid" x="350" y="350" width="70" height="140"/>
-  <object name="ground" type="solid" x="0" y="560" width="210" height="70"/>
-  <object name="ground" type="solid" x="210" y="490" width="70" height="140"/>
-  <object name="ground" type="solid" x="280" y="420" width="70" height="140"/>
-  <object name="ground" type="solid" x="560" y="70" width="70" height="70"/>
+ <objectgroup color="#0000ff" name="Object Layer 1" width="20" height="10">
+  <object x="490" y="280">
+   <polygon points="0,0 -70,70 0,70"/>
+  </object>
+  <object x="420" y="350">
+   <polygon points="0,0 -70,70 0,70 -70,70 0,70 -70,70 0,70"/>
+  </object>
+  <object x="350" y="420">
+   <polygon points="0,0 -70,70 0,70 -70,70 0,70"/>
+  </object>
+  <object x="280" y="490">
+   <polygon points="0,0 -70,70 0,70"/>
+  </object>
+  <object x="630" y="70">
+   <polygon points="0,0 -70,70 0,70"/>
+  </object>
+  <object x="980" y="280">
+   <polygon points="0,0 70,70 0,70"/>
+  </object>
+  <object x="1050" y="350">
+   <polygon points="0,0 70,70 0,70 70,70 0,70"/>
+  </object>
+  <object x="1120" y="420">
+   <polygon points="0,0 70,70 0,70"/>
+  </object>
+  <object x="1190" y="490">
+   <polygon points="0,0 70,70 0,70"/>
+  </object>
+  <object x="420" y="140" width="140" height="70"/>
+  <object x="630" y="70" width="350" height="70"/>
+  <object x="770" y="280" width="210" height="70"/>
+  <object x="1260" y="560" width="70" height="70"/>
+  <object x="490" y="280" width="70" height="70"/>
+  <object x="0" y="560" width="210" height="70"/>
  </objectgroup>
 </map>

@@ -19,12 +19,11 @@ public class LevelController {
     public static Batch spriteBatch;
 
     public static World gameWorld;
-    private static Array<Body> worldBodies;
-    private static Box2DDebugRenderer debugRenderer;
+    private static Array<Body> worldBodies;   private static Box2DDebugRenderer debugRenderer;
 
     public static void initializeController(){
         level = new Level("map/map1.tmx");
-        renderer = new OrthogonalTiledMapRenderer(level.map,UNIT_SCALE );//this is for the tile
+        renderer = new OrthogonalTiledMapRenderer(level.map, UNIT_SCALE );//this is for the tile
 
         gameWorld = new World(new Vector2(0, 0), true);//creates gravity
         worldBodies = new Array<Body>();
