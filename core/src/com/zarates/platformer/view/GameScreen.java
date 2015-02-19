@@ -22,7 +22,7 @@ public class GameScreen implements Screen {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);//clears screen with my chosen color
 
         LevelController.update(delta);
-        CameraController.update();
+         CameraController.update();
 
         LevelController.draw();
     }

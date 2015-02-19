@@ -25,7 +25,7 @@ public class LevelController {
         level = new Level("map/map1.tmx");
         renderer = new OrthogonalTiledMapRenderer(level.map, UNIT_SCALE );//this is for the tile
 
-        gameWorld = new World(new Vector2(0, 0), true);//creates gravity
+        gameWorld = new World(new Vector2(0, -10), true);//creates gravity
         worldBodies = new Array<Body>();
         debugRenderer = new Box2DDebugRenderer();
 
